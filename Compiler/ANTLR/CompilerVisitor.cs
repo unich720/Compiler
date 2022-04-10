@@ -62,6 +62,12 @@ public interface ICompilerVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <return>The visitor result.</return>
 	Result VisitToken([NotNull] CompilerParser.TokenContext context);
 	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.identifier"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIdentifier([NotNull] CompilerParser.IdentifierContext context);
+	/// <summary>
 	/// Visit a parse tree produced by <see cref="CompilerParser.keyword"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -85,4 +91,358 @@ public interface ICompilerVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
 	Result VisitOperator_or_punctuator([NotNull] CompilerParser.Operator_or_punctuatorContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.type_name"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitType_name([NotNull] CompilerParser.Type_nameContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitType([NotNull] CompilerParser.TypeContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.reference_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitReference_type([NotNull] CompilerParser.Reference_typeContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.class_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitClass_type([NotNull] CompilerParser.Class_typeContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.value_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitValue_type([NotNull] CompilerParser.Value_typeContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.non_nullable_value_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitNon_nullable_value_type([NotNull] CompilerParser.Non_nullable_value_typeContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.struct_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitStruct_type([NotNull] CompilerParser.Struct_typeContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.simple_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSimple_type([NotNull] CompilerParser.Simple_typeContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.numeric_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitNumeric_type([NotNull] CompilerParser.Numeric_typeContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.integral_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIntegral_type([NotNull] CompilerParser.Integral_typeContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.floating_point_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitFloating_point_type([NotNull] CompilerParser.Floating_point_typeContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.argument_list"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitArgument_list([NotNull] CompilerParser.Argument_listContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.argument"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitArgument([NotNull] CompilerParser.ArgumentContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.primary_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPrimary_expression([NotNull] CompilerParser.Primary_expressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.primary_no_array_creation_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPrimary_no_array_creation_expression([NotNull] CompilerParser.Primary_no_array_creation_expressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.simple_name"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSimple_name([NotNull] CompilerParser.Simple_nameContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.argument_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitArgument_value([NotNull] CompilerParser.Argument_valueContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.unary_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitUnary_expression([NotNull] CompilerParser.Unary_expressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.multiplicative_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitMultiplicative_expression([NotNull] CompilerParser.Multiplicative_expressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.additive_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAdditive_expression([NotNull] CompilerParser.Additive_expressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.relational_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitRelational_expression([NotNull] CompilerParser.Relational_expressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.equality_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitEquality_expression([NotNull] CompilerParser.Equality_expressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.conditional_and_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitConditional_and_expression([NotNull] CompilerParser.Conditional_and_expressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.conditional_or_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitConditional_or_expression([NotNull] CompilerParser.Conditional_or_expressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitStatement([NotNull] CompilerParser.StatementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.declaration_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitDeclaration_statement([NotNull] CompilerParser.Declaration_statementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.local_variable_declaration"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLocal_variable_declaration([NotNull] CompilerParser.Local_variable_declarationContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.local_variable_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLocal_variable_type([NotNull] CompilerParser.Local_variable_typeContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.local_variable_declarators"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLocal_variable_declarators([NotNull] CompilerParser.Local_variable_declaratorsContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.local_variable_declarator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLocal_variable_declarator([NotNull] CompilerParser.Local_variable_declaratorContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.local_variable_initializer"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitLocal_variable_initializer([NotNull] CompilerParser.Local_variable_initializerContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.embedded_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitEmbedded_statement([NotNull] CompilerParser.Embedded_statementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.expression_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitExpression_statement([NotNull] CompilerParser.Expression_statementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.block"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBlock([NotNull] CompilerParser.BlockContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.statement_list"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitStatement_list([NotNull] CompilerParser.Statement_listContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.empty_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitEmpty_statement([NotNull] CompilerParser.Empty_statementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitExpression([NotNull] CompilerParser.ExpressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.assignment"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAssignment([NotNull] CompilerParser.AssignmentContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.assignment_operator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitAssignment_operator([NotNull] CompilerParser.Assignment_operatorContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.boolean_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBoolean_expression([NotNull] CompilerParser.Boolean_expressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.selection_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitSelection_statement([NotNull] CompilerParser.Selection_statementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.if_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIf_statement([NotNull] CompilerParser.If_statementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.iteration_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitIteration_statement([NotNull] CompilerParser.Iteration_statementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.while_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitWhile_statement([NotNull] CompilerParser.While_statementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.do_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitDo_statement([NotNull] CompilerParser.Do_statementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.for_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitFor_statement([NotNull] CompilerParser.For_statementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.for_initializer"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitFor_initializer([NotNull] CompilerParser.For_initializerContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.for_condition"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitFor_condition([NotNull] CompilerParser.For_conditionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.for_iterator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitFor_iterator([NotNull] CompilerParser.For_iteratorContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.statement_expression_list"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitStatement_expression_list([NotNull] CompilerParser.Statement_expression_listContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.statement_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitStatement_expression([NotNull] CompilerParser.Statement_expressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.post_increment_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPost_increment_expression([NotNull] CompilerParser.Post_increment_expressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.post_decrement_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPost_decrement_expression([NotNull] CompilerParser.Post_decrement_expressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.pre_increment_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPre_increment_expression([NotNull] CompilerParser.Pre_increment_expressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.pre_decrement_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitPre_decrement_expression([NotNull] CompilerParser.Pre_decrement_expressionContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.jump_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitJump_statement([NotNull] CompilerParser.Jump_statementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.break_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitBreak_statement([NotNull] CompilerParser.Break_statementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.continue_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitContinue_statement([NotNull] CompilerParser.Continue_statementContext context);
+	/// <summary>
+	/// Visit a parse tree produced by <see cref="CompilerParser.return_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	/// <return>The visitor result.</return>
+	Result VisitReturn_statement([NotNull] CompilerParser.Return_statementContext context);
 }

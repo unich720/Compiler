@@ -1,0 +1,9 @@
+/* text */
+// test
+int main()
+{
+  if(1==1)
+  {
+	int i = 1;
+  }
+}

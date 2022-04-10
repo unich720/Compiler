@@ -96,6 +96,18 @@ public partial class CompilerBaseListener : ICompilerListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitToken([NotNull] CompilerParser.TokenContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.identifier"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterIdentifier([NotNull] CompilerParser.IdentifierContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.identifier"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitIdentifier([NotNull] CompilerParser.IdentifierContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="CompilerParser.keyword"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -143,6 +155,714 @@ public partial class CompilerBaseListener : ICompilerListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitOperator_or_punctuator([NotNull] CompilerParser.Operator_or_punctuatorContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.type_name"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterType_name([NotNull] CompilerParser.Type_nameContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.type_name"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitType_name([NotNull] CompilerParser.Type_nameContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterType([NotNull] CompilerParser.TypeContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitType([NotNull] CompilerParser.TypeContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.reference_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterReference_type([NotNull] CompilerParser.Reference_typeContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.reference_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitReference_type([NotNull] CompilerParser.Reference_typeContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.class_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterClass_type([NotNull] CompilerParser.Class_typeContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.class_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitClass_type([NotNull] CompilerParser.Class_typeContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.value_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterValue_type([NotNull] CompilerParser.Value_typeContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.value_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitValue_type([NotNull] CompilerParser.Value_typeContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.non_nullable_value_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterNon_nullable_value_type([NotNull] CompilerParser.Non_nullable_value_typeContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.non_nullable_value_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitNon_nullable_value_type([NotNull] CompilerParser.Non_nullable_value_typeContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.struct_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterStruct_type([NotNull] CompilerParser.Struct_typeContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.struct_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitStruct_type([NotNull] CompilerParser.Struct_typeContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.simple_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterSimple_type([NotNull] CompilerParser.Simple_typeContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.simple_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitSimple_type([NotNull] CompilerParser.Simple_typeContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.numeric_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterNumeric_type([NotNull] CompilerParser.Numeric_typeContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.numeric_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitNumeric_type([NotNull] CompilerParser.Numeric_typeContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.integral_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterIntegral_type([NotNull] CompilerParser.Integral_typeContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.integral_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitIntegral_type([NotNull] CompilerParser.Integral_typeContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.floating_point_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterFloating_point_type([NotNull] CompilerParser.Floating_point_typeContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.floating_point_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitFloating_point_type([NotNull] CompilerParser.Floating_point_typeContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.argument_list"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterArgument_list([NotNull] CompilerParser.Argument_listContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.argument_list"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitArgument_list([NotNull] CompilerParser.Argument_listContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.argument"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterArgument([NotNull] CompilerParser.ArgumentContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.argument"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitArgument([NotNull] CompilerParser.ArgumentContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.primary_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterPrimary_expression([NotNull] CompilerParser.Primary_expressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.primary_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitPrimary_expression([NotNull] CompilerParser.Primary_expressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.primary_no_array_creation_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterPrimary_no_array_creation_expression([NotNull] CompilerParser.Primary_no_array_creation_expressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.primary_no_array_creation_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitPrimary_no_array_creation_expression([NotNull] CompilerParser.Primary_no_array_creation_expressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.simple_name"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterSimple_name([NotNull] CompilerParser.Simple_nameContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.simple_name"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitSimple_name([NotNull] CompilerParser.Simple_nameContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.argument_value"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterArgument_value([NotNull] CompilerParser.Argument_valueContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.argument_value"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitArgument_value([NotNull] CompilerParser.Argument_valueContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.unary_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterUnary_expression([NotNull] CompilerParser.Unary_expressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.unary_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitUnary_expression([NotNull] CompilerParser.Unary_expressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.multiplicative_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterMultiplicative_expression([NotNull] CompilerParser.Multiplicative_expressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.multiplicative_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitMultiplicative_expression([NotNull] CompilerParser.Multiplicative_expressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.additive_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAdditive_expression([NotNull] CompilerParser.Additive_expressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.additive_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAdditive_expression([NotNull] CompilerParser.Additive_expressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.relational_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterRelational_expression([NotNull] CompilerParser.Relational_expressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.relational_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitRelational_expression([NotNull] CompilerParser.Relational_expressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.equality_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterEquality_expression([NotNull] CompilerParser.Equality_expressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.equality_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitEquality_expression([NotNull] CompilerParser.Equality_expressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.conditional_and_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterConditional_and_expression([NotNull] CompilerParser.Conditional_and_expressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.conditional_and_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitConditional_and_expression([NotNull] CompilerParser.Conditional_and_expressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.conditional_or_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterConditional_or_expression([NotNull] CompilerParser.Conditional_or_expressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.conditional_or_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitConditional_or_expression([NotNull] CompilerParser.Conditional_or_expressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterStatement([NotNull] CompilerParser.StatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitStatement([NotNull] CompilerParser.StatementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.declaration_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterDeclaration_statement([NotNull] CompilerParser.Declaration_statementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.declaration_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitDeclaration_statement([NotNull] CompilerParser.Declaration_statementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.local_variable_declaration"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterLocal_variable_declaration([NotNull] CompilerParser.Local_variable_declarationContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.local_variable_declaration"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitLocal_variable_declaration([NotNull] CompilerParser.Local_variable_declarationContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.local_variable_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterLocal_variable_type([NotNull] CompilerParser.Local_variable_typeContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.local_variable_type"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitLocal_variable_type([NotNull] CompilerParser.Local_variable_typeContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.local_variable_declarators"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterLocal_variable_declarators([NotNull] CompilerParser.Local_variable_declaratorsContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.local_variable_declarators"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitLocal_variable_declarators([NotNull] CompilerParser.Local_variable_declaratorsContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.local_variable_declarator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterLocal_variable_declarator([NotNull] CompilerParser.Local_variable_declaratorContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.local_variable_declarator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitLocal_variable_declarator([NotNull] CompilerParser.Local_variable_declaratorContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.local_variable_initializer"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterLocal_variable_initializer([NotNull] CompilerParser.Local_variable_initializerContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.local_variable_initializer"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitLocal_variable_initializer([NotNull] CompilerParser.Local_variable_initializerContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.embedded_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterEmbedded_statement([NotNull] CompilerParser.Embedded_statementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.embedded_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitEmbedded_statement([NotNull] CompilerParser.Embedded_statementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.expression_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterExpression_statement([NotNull] CompilerParser.Expression_statementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.expression_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitExpression_statement([NotNull] CompilerParser.Expression_statementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.block"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterBlock([NotNull] CompilerParser.BlockContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.block"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitBlock([NotNull] CompilerParser.BlockContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.statement_list"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterStatement_list([NotNull] CompilerParser.Statement_listContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.statement_list"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitStatement_list([NotNull] CompilerParser.Statement_listContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.empty_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterEmpty_statement([NotNull] CompilerParser.Empty_statementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.empty_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitEmpty_statement([NotNull] CompilerParser.Empty_statementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterExpression([NotNull] CompilerParser.ExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitExpression([NotNull] CompilerParser.ExpressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.assignment"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAssignment([NotNull] CompilerParser.AssignmentContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.assignment"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAssignment([NotNull] CompilerParser.AssignmentContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.assignment_operator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAssignment_operator([NotNull] CompilerParser.Assignment_operatorContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.assignment_operator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAssignment_operator([NotNull] CompilerParser.Assignment_operatorContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.boolean_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterBoolean_expression([NotNull] CompilerParser.Boolean_expressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.boolean_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitBoolean_expression([NotNull] CompilerParser.Boolean_expressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.selection_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterSelection_statement([NotNull] CompilerParser.Selection_statementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.selection_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitSelection_statement([NotNull] CompilerParser.Selection_statementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.if_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterIf_statement([NotNull] CompilerParser.If_statementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.if_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitIf_statement([NotNull] CompilerParser.If_statementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.iteration_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterIteration_statement([NotNull] CompilerParser.Iteration_statementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.iteration_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitIteration_statement([NotNull] CompilerParser.Iteration_statementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.while_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterWhile_statement([NotNull] CompilerParser.While_statementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.while_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitWhile_statement([NotNull] CompilerParser.While_statementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.do_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterDo_statement([NotNull] CompilerParser.Do_statementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.do_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitDo_statement([NotNull] CompilerParser.Do_statementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.for_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterFor_statement([NotNull] CompilerParser.For_statementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.for_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitFor_statement([NotNull] CompilerParser.For_statementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.for_initializer"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterFor_initializer([NotNull] CompilerParser.For_initializerContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.for_initializer"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitFor_initializer([NotNull] CompilerParser.For_initializerContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.for_condition"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterFor_condition([NotNull] CompilerParser.For_conditionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.for_condition"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitFor_condition([NotNull] CompilerParser.For_conditionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.for_iterator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterFor_iterator([NotNull] CompilerParser.For_iteratorContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.for_iterator"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitFor_iterator([NotNull] CompilerParser.For_iteratorContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.statement_expression_list"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterStatement_expression_list([NotNull] CompilerParser.Statement_expression_listContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.statement_expression_list"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitStatement_expression_list([NotNull] CompilerParser.Statement_expression_listContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.statement_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterStatement_expression([NotNull] CompilerParser.Statement_expressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.statement_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitStatement_expression([NotNull] CompilerParser.Statement_expressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.post_increment_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterPost_increment_expression([NotNull] CompilerParser.Post_increment_expressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.post_increment_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitPost_increment_expression([NotNull] CompilerParser.Post_increment_expressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.post_decrement_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterPost_decrement_expression([NotNull] CompilerParser.Post_decrement_expressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.post_decrement_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitPost_decrement_expression([NotNull] CompilerParser.Post_decrement_expressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.pre_increment_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterPre_increment_expression([NotNull] CompilerParser.Pre_increment_expressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.pre_increment_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitPre_increment_expression([NotNull] CompilerParser.Pre_increment_expressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.pre_decrement_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterPre_decrement_expression([NotNull] CompilerParser.Pre_decrement_expressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.pre_decrement_expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitPre_decrement_expression([NotNull] CompilerParser.Pre_decrement_expressionContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.jump_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterJump_statement([NotNull] CompilerParser.Jump_statementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.jump_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitJump_statement([NotNull] CompilerParser.Jump_statementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.break_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterBreak_statement([NotNull] CompilerParser.Break_statementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.break_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitBreak_statement([NotNull] CompilerParser.Break_statementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.continue_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterContinue_statement([NotNull] CompilerParser.Continue_statementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.continue_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitContinue_statement([NotNull] CompilerParser.Continue_statementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.return_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterReturn_statement([NotNull] CompilerParser.Return_statementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.return_statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitReturn_statement([NotNull] CompilerParser.Return_statementContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

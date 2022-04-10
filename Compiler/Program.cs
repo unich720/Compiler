@@ -10,12 +10,18 @@ namespace Compiler
         {
             Console.WriteLine("Hello World!");
 
-            string input = "4+5";
-            ICharStream stream = CharStreams.fromString(input);
-            ITokenSource lexer = new CompilerLexer(stream);
+            //string input = "int i;";
+            //ICharStream stream = CharStreams.fromString(input);
+
+            ICharStream stream = CharStreams.fromPath(@"C:\\GitHub\\Compiler\\Compiler\\ANTLR\\csharp\\test.txt");
+
+            ITokenSource lexer = new pikeLexer(stream);
             ITokenStream tokens= new CommonTokenStream(lexer);
-            CompilerParser parser = new CompilerParser(tokens);
-            parser.BuildParseTree = true;
+            var parser = new pikeParser(tokens);
+            //parser.BuildParseTree = true;
+            //parser.AddParseListener(new pikeBaseListener());
+            var asd = parser.program();
+            
             //IParseTree tree = 
         }
     }

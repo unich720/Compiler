@@ -81,6 +81,16 @@ public interface ICompilerListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitToken([NotNull] CompilerParser.TokenContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.identifier"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterIdentifier([NotNull] CompilerParser.IdentifierContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.identifier"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitIdentifier([NotNull] CompilerParser.IdentifierContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="CompilerParser.keyword"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -120,4 +130,594 @@ public interface ICompilerListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitOperator_or_punctuator([NotNull] CompilerParser.Operator_or_punctuatorContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.type_name"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterType_name([NotNull] CompilerParser.Type_nameContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.type_name"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitType_name([NotNull] CompilerParser.Type_nameContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterType([NotNull] CompilerParser.TypeContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitType([NotNull] CompilerParser.TypeContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.reference_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterReference_type([NotNull] CompilerParser.Reference_typeContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.reference_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitReference_type([NotNull] CompilerParser.Reference_typeContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.class_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterClass_type([NotNull] CompilerParser.Class_typeContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.class_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitClass_type([NotNull] CompilerParser.Class_typeContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.value_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterValue_type([NotNull] CompilerParser.Value_typeContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.value_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitValue_type([NotNull] CompilerParser.Value_typeContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.non_nullable_value_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterNon_nullable_value_type([NotNull] CompilerParser.Non_nullable_value_typeContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.non_nullable_value_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitNon_nullable_value_type([NotNull] CompilerParser.Non_nullable_value_typeContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.struct_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStruct_type([NotNull] CompilerParser.Struct_typeContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.struct_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStruct_type([NotNull] CompilerParser.Struct_typeContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.simple_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSimple_type([NotNull] CompilerParser.Simple_typeContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.simple_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSimple_type([NotNull] CompilerParser.Simple_typeContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.numeric_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterNumeric_type([NotNull] CompilerParser.Numeric_typeContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.numeric_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitNumeric_type([NotNull] CompilerParser.Numeric_typeContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.integral_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterIntegral_type([NotNull] CompilerParser.Integral_typeContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.integral_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitIntegral_type([NotNull] CompilerParser.Integral_typeContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.floating_point_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterFloating_point_type([NotNull] CompilerParser.Floating_point_typeContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.floating_point_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitFloating_point_type([NotNull] CompilerParser.Floating_point_typeContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.argument_list"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterArgument_list([NotNull] CompilerParser.Argument_listContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.argument_list"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitArgument_list([NotNull] CompilerParser.Argument_listContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.argument"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterArgument([NotNull] CompilerParser.ArgumentContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.argument"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitArgument([NotNull] CompilerParser.ArgumentContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.primary_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterPrimary_expression([NotNull] CompilerParser.Primary_expressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.primary_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitPrimary_expression([NotNull] CompilerParser.Primary_expressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.primary_no_array_creation_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterPrimary_no_array_creation_expression([NotNull] CompilerParser.Primary_no_array_creation_expressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.primary_no_array_creation_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitPrimary_no_array_creation_expression([NotNull] CompilerParser.Primary_no_array_creation_expressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.simple_name"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSimple_name([NotNull] CompilerParser.Simple_nameContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.simple_name"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSimple_name([NotNull] CompilerParser.Simple_nameContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.argument_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterArgument_value([NotNull] CompilerParser.Argument_valueContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.argument_value"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitArgument_value([NotNull] CompilerParser.Argument_valueContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.unary_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterUnary_expression([NotNull] CompilerParser.Unary_expressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.unary_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitUnary_expression([NotNull] CompilerParser.Unary_expressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.multiplicative_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterMultiplicative_expression([NotNull] CompilerParser.Multiplicative_expressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.multiplicative_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitMultiplicative_expression([NotNull] CompilerParser.Multiplicative_expressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.additive_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAdditive_expression([NotNull] CompilerParser.Additive_expressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.additive_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAdditive_expression([NotNull] CompilerParser.Additive_expressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.relational_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterRelational_expression([NotNull] CompilerParser.Relational_expressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.relational_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitRelational_expression([NotNull] CompilerParser.Relational_expressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.equality_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterEquality_expression([NotNull] CompilerParser.Equality_expressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.equality_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitEquality_expression([NotNull] CompilerParser.Equality_expressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.conditional_and_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterConditional_and_expression([NotNull] CompilerParser.Conditional_and_expressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.conditional_and_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitConditional_and_expression([NotNull] CompilerParser.Conditional_and_expressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.conditional_or_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterConditional_or_expression([NotNull] CompilerParser.Conditional_or_expressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.conditional_or_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitConditional_or_expression([NotNull] CompilerParser.Conditional_or_expressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStatement([NotNull] CompilerParser.StatementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStatement([NotNull] CompilerParser.StatementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.declaration_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterDeclaration_statement([NotNull] CompilerParser.Declaration_statementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.declaration_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitDeclaration_statement([NotNull] CompilerParser.Declaration_statementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.local_variable_declaration"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLocal_variable_declaration([NotNull] CompilerParser.Local_variable_declarationContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.local_variable_declaration"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLocal_variable_declaration([NotNull] CompilerParser.Local_variable_declarationContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.local_variable_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLocal_variable_type([NotNull] CompilerParser.Local_variable_typeContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.local_variable_type"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLocal_variable_type([NotNull] CompilerParser.Local_variable_typeContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.local_variable_declarators"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLocal_variable_declarators([NotNull] CompilerParser.Local_variable_declaratorsContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.local_variable_declarators"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLocal_variable_declarators([NotNull] CompilerParser.Local_variable_declaratorsContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.local_variable_declarator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLocal_variable_declarator([NotNull] CompilerParser.Local_variable_declaratorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.local_variable_declarator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLocal_variable_declarator([NotNull] CompilerParser.Local_variable_declaratorContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.local_variable_initializer"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLocal_variable_initializer([NotNull] CompilerParser.Local_variable_initializerContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.local_variable_initializer"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLocal_variable_initializer([NotNull] CompilerParser.Local_variable_initializerContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.embedded_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterEmbedded_statement([NotNull] CompilerParser.Embedded_statementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.embedded_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitEmbedded_statement([NotNull] CompilerParser.Embedded_statementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.expression_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterExpression_statement([NotNull] CompilerParser.Expression_statementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.expression_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitExpression_statement([NotNull] CompilerParser.Expression_statementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.block"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBlock([NotNull] CompilerParser.BlockContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.block"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBlock([NotNull] CompilerParser.BlockContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.statement_list"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStatement_list([NotNull] CompilerParser.Statement_listContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.statement_list"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStatement_list([NotNull] CompilerParser.Statement_listContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.empty_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterEmpty_statement([NotNull] CompilerParser.Empty_statementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.empty_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitEmpty_statement([NotNull] CompilerParser.Empty_statementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterExpression([NotNull] CompilerParser.ExpressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitExpression([NotNull] CompilerParser.ExpressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.assignment"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAssignment([NotNull] CompilerParser.AssignmentContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.assignment"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAssignment([NotNull] CompilerParser.AssignmentContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.assignment_operator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAssignment_operator([NotNull] CompilerParser.Assignment_operatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.assignment_operator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAssignment_operator([NotNull] CompilerParser.Assignment_operatorContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.boolean_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBoolean_expression([NotNull] CompilerParser.Boolean_expressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.boolean_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBoolean_expression([NotNull] CompilerParser.Boolean_expressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.selection_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSelection_statement([NotNull] CompilerParser.Selection_statementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.selection_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSelection_statement([NotNull] CompilerParser.Selection_statementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.if_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterIf_statement([NotNull] CompilerParser.If_statementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.if_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitIf_statement([NotNull] CompilerParser.If_statementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.iteration_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterIteration_statement([NotNull] CompilerParser.Iteration_statementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.iteration_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitIteration_statement([NotNull] CompilerParser.Iteration_statementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.while_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterWhile_statement([NotNull] CompilerParser.While_statementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.while_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitWhile_statement([NotNull] CompilerParser.While_statementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.do_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterDo_statement([NotNull] CompilerParser.Do_statementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.do_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitDo_statement([NotNull] CompilerParser.Do_statementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.for_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterFor_statement([NotNull] CompilerParser.For_statementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.for_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitFor_statement([NotNull] CompilerParser.For_statementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.for_initializer"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterFor_initializer([NotNull] CompilerParser.For_initializerContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.for_initializer"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitFor_initializer([NotNull] CompilerParser.For_initializerContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.for_condition"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterFor_condition([NotNull] CompilerParser.For_conditionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.for_condition"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitFor_condition([NotNull] CompilerParser.For_conditionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.for_iterator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterFor_iterator([NotNull] CompilerParser.For_iteratorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.for_iterator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitFor_iterator([NotNull] CompilerParser.For_iteratorContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.statement_expression_list"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStatement_expression_list([NotNull] CompilerParser.Statement_expression_listContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.statement_expression_list"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStatement_expression_list([NotNull] CompilerParser.Statement_expression_listContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.statement_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterStatement_expression([NotNull] CompilerParser.Statement_expressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.statement_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitStatement_expression([NotNull] CompilerParser.Statement_expressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.post_increment_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterPost_increment_expression([NotNull] CompilerParser.Post_increment_expressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.post_increment_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitPost_increment_expression([NotNull] CompilerParser.Post_increment_expressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.post_decrement_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterPost_decrement_expression([NotNull] CompilerParser.Post_decrement_expressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.post_decrement_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitPost_decrement_expression([NotNull] CompilerParser.Post_decrement_expressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.pre_increment_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterPre_increment_expression([NotNull] CompilerParser.Pre_increment_expressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.pre_increment_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitPre_increment_expression([NotNull] CompilerParser.Pre_increment_expressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.pre_decrement_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterPre_decrement_expression([NotNull] CompilerParser.Pre_decrement_expressionContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.pre_decrement_expression"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitPre_decrement_expression([NotNull] CompilerParser.Pre_decrement_expressionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.jump_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterJump_statement([NotNull] CompilerParser.Jump_statementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.jump_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitJump_statement([NotNull] CompilerParser.Jump_statementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.break_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterBreak_statement([NotNull] CompilerParser.Break_statementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.break_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitBreak_statement([NotNull] CompilerParser.Break_statementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.continue_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterContinue_statement([NotNull] CompilerParser.Continue_statementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.continue_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitContinue_statement([NotNull] CompilerParser.Continue_statementContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="CompilerParser.return_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterReturn_statement([NotNull] CompilerParser.Return_statementContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="CompilerParser.return_statement"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitReturn_statement([NotNull] CompilerParser.Return_statementContext context);
 }
